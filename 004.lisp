@@ -1,6 +1,8 @@
 
 ;; Find the largest palindrome made from the product of two 3-digit numbers.
 
+(in-package #:pe)
+
 (defun reversed (n)
   (loop with r = 0
         while (> n 0) do (setf r (+ (* 10 r) (mod n 10))

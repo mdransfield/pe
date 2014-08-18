@@ -2,6 +2,8 @@
 ;; Find the difference between the sum of the squares of the first one
 ;; hundred natural numbers and the square of the sum.
 
+(in-package #:pe)
+
 (defun nums (n)
   (loop for i from 1 to n
         collect i))

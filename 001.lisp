@@ -2,6 +2,8 @@
 ;; Add all the natural numbers below one thousand that are multiples
 ;; of 3 or 5.
 
+(in-package #:pe)
+
 (defun multiple-of-p (n x)
   (eql 0 (mod x n)))
 

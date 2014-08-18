@@ -8,6 +8,8 @@
 ;;; Which starting number, under one million, produces the longest
 ;;; chain?
 
+(in-package #:pe)
+
 (defun make-table ()
   (let ((table (make-hash-table)))
     (setf (gethash 1 table) 1

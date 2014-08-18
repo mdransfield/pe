@@ -2,6 +2,8 @@
 ;;; What is the value of the first triangle number to have over five
 ;;; hundred divisors?
 
+(in-package #:pe)
+
 (defparameter *triangle* 1)
 
 (defvar *next-triangle* 2)
