@@ -1,5 +1,5 @@
 ;;;; package.lisp
 
 (defpackage #:pe
-  (:use #:cl))
+  (:use #:cl #:p))
 
