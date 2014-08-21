@@ -19,6 +19,8 @@
 ;; 1,500,000 can exactly one integer sided right angle triangle be
 ;; formed?
 
+(in-package #:pe)
+
 (defun euler-075 ()
   (loop with l = 1500000
      with counts = (make-array (1+ l) :initial-element 0)
