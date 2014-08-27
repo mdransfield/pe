@@ -8,5 +8,5 @@
 	   #:euler-016 #:euler-017 #:euler-018 #:euler-019 #:euler-020
 	   #:euler-021 #:euler-022 #:euler-023 #:euler-024 #:euler-025
 	   #:euler-026 #:euler-027 #:euler-028 #:euler-029 #:euler-030
-	   #:euler-031 #:euler-032 #:euler-062 #:euler-075))
+	   #:euler-031 #:euler-032 #:eluer-051 #:euler-062 #:euler-075))
 
