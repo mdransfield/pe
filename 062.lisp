@@ -13,8 +13,8 @@
 
 (defun euler-062 ()
   (loop with map = (make-hash-table :test #'equal)
-     for i from 2 upto 10000
-     do (push i (gethash (sort (prin1-to-string (expt i 3)) #'char<) map))
-     finally (return (loop for v being the hash-values of map
-			when (= 5 (length v))
-			return (expt (car (sort v #'<)) 3)))))
+	for i from 2 upto 10000
+	do (push i (gethash (sort (prin1-to-string (expt i 3)) #'char<) map))
+	finally (return (loop for v being the hash-values of map
+			      when (= 5 (length v))
+				return (expt (car (sort v #'<)) 3)))))

@@ -23,14 +23,14 @@
 
 (defun euler-075 ()
   (loop with l = 1500000
-     with counts = (make-array (1+ l) :initial-element 0)
-     with sqrtl = (floor (sqrt l))
-     for m from 2 below sqrtl by 2
-     do (loop for n from 1 below (- sqrtl m) by 2
-	     when (= 1 (gcd m n))
-	     do (loop with p = (+ (abs (- (* m m) (* n n)))
-				  (* 2 m n)
-				  (+ (* m m) (* n n)))
-		     for s from p upto l by p
-		     do (incf (aref counts s))))
-     finally (return (loop for i across counts counting (= i 1)))))
+	with counts = (make-array (1+ l) :initial-element 0)
+	with sqrtl = (floor (sqrt l))
+	for m from 2 below sqrtl by 2
+	do (loop for n from 1 below (- sqrtl m) by 2
+		 when (= 1 (gcd m n))
+		   do (loop with p = (+ (abs (- (* m m) (* n n)))
+					(* 2 m n)
+					(+ (* m m) (* n n)))
+			    for s from p upto l by p
+			    do (incf (aref counts s))))
+	finally (return (loop for i across counts counting (= i 1)))))
