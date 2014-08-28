@@ -14,7 +14,7 @@
 
 (defun left-truncatable-p (p)
   (loop for power from (floor (log p 10)) downto 1
-	for x (mod p (expt 10 power))
+	for x = (mod p (expt 10 power))
 	unless (p:primep x)
 	  return nil
 	finally (return t)))

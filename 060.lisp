@@ -34,5 +34,7 @@
 		 for cs = (intersection bs (concatenable-with b p m))
 		 do (loop for c in cs
 			  for ds = (intersection cs (concatenable-with c p m))
-			  do (loop for e in es
-				   do (return-from euler-060 (+ a b c d e)))))))
+			  do (loop for d in ds
+				   for es = (intersection ds (concatenable-with d p m))
+				   do (loop for e in es
+					    do (return-from euler-060 (+ a b c d e))))))))
