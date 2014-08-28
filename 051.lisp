@@ -19,17 +19,16 @@
 
 (defun eight-prime-family-p (s r)
   (loop for d across "0123456789"
-     for n = (parse-integer (substitute-if d (lambda (x) (char= x r)) s))
-     counting (and (p:primep n)
-		   (> n 100000)) into c
-     finally (return (= c 8))))
+	for n = (parse-integer (substitute-if d (lambda (x) (char= x r)) s))
+	counting (and (p:primep n) (> n 100000)) into c
+	finally (return (= c 8))))
 
 (defun euler-051 ()
   (loop with primes = (p:primes-upto 1000000)
-     for p in primes
-     for s = (prin1-to-string p)
-     when (loop for x across "012"
-	     when (= 3 (count-if (lambda (n) (char= n #\0)) s))
-	     return (eight-prime-family-p s #\0))
-     return p))
+	for p in primes
+	for s = (prin1-to-string p)
+	when (loop for x across "012"
+		   when (= 3 (count-if (lambda (n) (char= n x)) s))
+		     return (eight-prime-family-p s x))
+	  return p))
 	   
