@@ -14,6 +14,6 @@
 	   #:euler-046 #:euler-047 #:euler-048 #:euler-049 #:euler-050
 	   #:euler-051 #:euler-052 #:euler-053 #:euler-054 #:euler-055
 	   #:euler-056 #:euler-057
-	   #:euler-060 #:euler-062
+	   #:euler-060 #:euler-061 #:euler-062
 	   #:euler-075))
 
