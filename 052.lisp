@@ -29,5 +29,4 @@
 		 (equal d1 d3)
 		 (equal d1 d5)) return n))
 
-(time (euler-052))
-142857
+;(time (euler-052))
