@@ -266,7 +266,5 @@
 (defun euler-054 ()
   (read-hands "files/poker.txt"))
 
-(time 
-(euler-054)
-)
-376
+;(time (euler-054))
+
