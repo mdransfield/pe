@@ -6,7 +6,8 @@
   :author "Martin Dransfield <mdransfield@gmail.com>"
   :license "GPL v2 see LICENSE"
   :depends-on (#:primes
-               #:fibonacci)
+               #:fibonacci
+	       #:sudoku)
   :components ((:file "package")
 	       (:file "001") (:file "002") (:file "003") (:file "004") (:file "005")
 	       (:file "006") (:file "007") (:file "008") (:file "009") (:file "010")
@@ -22,5 +23,6 @@
 	       (:file "056") (:file "057")               (:file "059") (:file "060")
 	       (:file "061") (:file "062")                             (:file "065")
 	                                                               (:file "075")
-	       (:file "076")))
+	       (:file "076")
+	       (:file "096")))
 
