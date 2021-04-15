@@ -27,7 +27,7 @@ Skip the actual calculation if it's present in the accompanying hash-table."
 	     (setf n q))
         finally (return temp)))
 
-(defun all-permutations (s)
+(defun permutations-of (s)
   "Generate all the permutations of S."
   (loop for i from 0 below (factorial (length s))
 	collect (permutation i (make-array (length s) :initial-contents s))))
