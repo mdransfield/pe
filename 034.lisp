@@ -4,20 +4,6 @@
 
 (in-package #:pe)
 
-(defparameter factorial-table (make-hash-table))
-
-(defun ifact (n x)
-  (if (zerop n)
-      x
-      (ifact (1- n) (* n x))))
-
-(defun factorial (n)
-  (multiple-value-bind (val win) (gethash n factorial-table)
-    (if win
-	val
-	(setf (gethash n factorial-table) (ifact n 1)))))
-
-
 (defun calc-digits (n)
   (loop with digits = nil
         while (> n 0)

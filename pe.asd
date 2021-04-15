@@ -7,8 +7,10 @@
   :license "GPL v2 see LICENSE"
   :depends-on (#:primes
                #:fibonacci
-	       #:sudoku)
+	       #:sudoku
+	       #:cl-utilities)
   :components ((:file "package")
+	       (:file "utils")
 	       (:file "001") (:file "002") (:file "003") (:file "004") (:file "005")
 	       (:file "006") (:file "007") (:file "008") (:file "009") (:file "010")
 	       (:file "011") (:file "012") (:file "013") (:file "014") (:file "015")
@@ -24,5 +26,5 @@
 	       (:file "061") (:file "062")                             (:file "065")
 	                                                               (:file "075")
 	       (:file "076")
-	       (:file "096")))
+	       (:file "096")               (:file "098")))
 

@@ -4,12 +4,6 @@
 
 (in-package #:pe)
 
-(defun factorial (n)
-  (labels ((ifact (n x)
-	     (if (zerop n) x
-		 (ifact (1- n) (* n x)))))
-    (ifact n 1)))
-
 (defun get-tempi (k f l i)
    (mod (floor k f) (- l i)))
 

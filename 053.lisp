@@ -18,19 +18,8 @@
 
 (in-package #:pe)
 
-(defparameter factorial-table (make-hash-table))
-
-(defun fact (n)
-  (labels ((ifact (n x)
-	     (if (= n 0) x
-		 (ifact (1- n) (* n x)))))
-    (let ((lookup (gethash n factorial-table)))
-      (if lookup
-	  lookup
-	  (setf (gethash n factorial-table) (ifact n 1))))))
-
 (defun c (n r)
-  (/ (fact n) (* (fact r) (fact (- n r)))))
+  (/ (factorial n) (* (factorial r) (factorial (- n r)))))
 
 (defun euler-053 ()
   (loop for n from 1 upto 100

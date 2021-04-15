@@ -3,13 +3,6 @@
 
 (in-package #:pe)
 
-(defun factorial (n)
-  (labels ((ifact (n x)
-	     (if (eql n 1)
-		 x
-		 (ifact (1- n) (* n x)))))
-    (ifact n 1)))
-
 (defun binomial-coefficient (n k)
   (/ (factorial n)
      (* (factorial k) (factorial (- n k)))))

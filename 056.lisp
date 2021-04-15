@@ -8,19 +8,9 @@
 
 (in-package #:pe)
 
-(defun digits (n)
-  (loop with temp = nil
-        while (> n 0)
-        do (multiple-value-bind (q r) (floor n 10)
-	     (push r temp)
-	     (setf n q))
-        finally (return temp)))
-
 (defun euler-056 ()
-  (loop
-     for a from 1 upto 100
-     maximizing (loop
-		   for b from 1 upto 100
-		   maximizing (apply #'+ (digits (expt a b))))))
+  (loop for a from 1 upto 100
+	maximizing (loop for b from 1 upto 100
+			 maximizing (apply #'+ (digits (expt a b))))))
 
 ;(time (euler-056))
