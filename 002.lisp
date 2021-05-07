@@ -15,6 +15,6 @@
     (reverse (ifib (list 2 1) limit))))
 
 (defun euler-002 ()
-  (reduce #'+ (remove-if-not #'evenp (fib 4000000))))
+  (reduce #'+ (remove-if-not #'evenp (fibonacci:fibs-upto 4000000))))
 
 ;(euler-002)
