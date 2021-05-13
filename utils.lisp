@@ -47,3 +47,10 @@ Skip the actual calculation if it's present in the accompanying hash-table."
 	     (setf (aref s i) temp)
 	     (setf fact (floor fact (- l i 1))))
     s))
+
+(defun pandigitalp (digits)
+  "Predicate true when DIGITS is 1-9 pandigital.
+That is, DIGITS contains all the digits 1 to 9, but not necessarily in order."
+  (and (eql 9 (length digits))
+       (equal (sort (copy-seq digits) #'<) '(1 2 3 4 5 6 7 8 9))))
+

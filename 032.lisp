@@ -4,24 +4,12 @@
 
 (in-package #:pe)
 
-(defun pandigitalp (digits)
-  (and (eql 9 (length digits))
-       (equal (sort (copy-seq digits) #'<) '(1 2 3 4 5 6 7 8 9))))
-
-(defun calc-digits (n)
-  (loop with digits = nil
-        while (> n 0)
-        do (multiple-value-bind (q r) (floor n 10)
-	     (push r digits)
-	     (setf n q))
-        finally (return digits)))
-
 (defparameter digits-table (make-hash-table))
 
 (defun digits (n)
   (let ((d (gethash n digits-table)))
       (unless d
-	(setf (gethash n digits-table) (calc-digits n))
+	(setf (gethash n digits-table) (digits-of n))
 	(setf d (gethash n digits-table)))
       d))
 

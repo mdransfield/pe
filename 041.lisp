@@ -16,11 +16,11 @@
 	     (setf n q))
         finally (return temp)))
 
-(defun pandigitalp (n)
+(defun npandigitalp (n)
   (equal (sort (digits n) #'<)
 	 (loop for i from 1 to (ceiling (log n 10))
 	       collect i)))
 
 (defun euler-041 ()
   (loop for i from 7654321 downto 1234567 by 2
-        when (and (pandigitalp i) (primep i)) return i))
+        when (and (npandigitalp i) (primep i)) return i))

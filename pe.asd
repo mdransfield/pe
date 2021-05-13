@@ -8,7 +8,8 @@
   :depends-on (#:primes
                #:fibonacci
 	       #:sudoku
-	       #:cl-utilities)
+	       #:cl-utilities
+	       #:computable-reals)
   :components
   ((:file "package")
    (:file "utils")
@@ -21,4 +22,5 @@
    (:file "061") (:file "062")                             (:file "065")
                                                            (:file "075") (:file "076")
                                                                          (:file "096")               (:file "098")
+                                             (:file "104")
                                                                          (:file "216")))

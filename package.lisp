@@ -1,7 +1,7 @@
 ;;;; package.lisp
 
 (defpackage #:pe
-  (:use #:cl #:p #:sudoku #:cl-utilities)
+  (:use #:cl #:p #:sudoku #:cl-utilities #:computable-reals)
   (:export #:euler-001 #:euler-002 #:euler-003 #:euler-004 #:euler-005
 	   #:euler-006 #:euler-007 #:euler-008 #:euler-009 #:euler-010
 	   #:euler-011 #:euler-012 #:euler-013 #:euler-014 #:euler-015
@@ -18,5 +18,6 @@
 	                                                   #:euler-075
 	   #:euler-076
 	   #:euler-096             #:euler-098
+                                               #:euler-104
 	   #:euler-216))
 
