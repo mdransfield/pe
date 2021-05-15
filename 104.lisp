@@ -12,9 +12,9 @@
 ;; nine digits AND the last nine digits are 1-9 pandigital, find k.
 
 
-(defconstant +logsqrt5+ (cr:log-r f:+sqrt5+ 10))
+(defparameter +logsqrt5+ (cr:log-r f:+sqrt5+ 10))
 
-(defconstant +logphi+ (cr:log-r f:+phi+ 10))
+(defparameter +logphi+ (cr:log-r f:+phi+ 10))
 
 (defun first-10-digits (n)
   (values (cr:floor-r (cr:expt-r 10 (cr:+r 8 (cadr (multiple-value-list (cr:floor-r (cr:-r (cr:*r n +logphi+) +logsqrt5+)))))))))
