@@ -21,5 +21,6 @@
 	   #:euler-096             #:euler-098
                                                #:euler-104
 		       #:euler-112
+	   #:euler-206
 	   #:euler-216))
 
