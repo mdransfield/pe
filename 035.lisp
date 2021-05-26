@@ -10,29 +10,6 @@
 
 (in-package #:pe)
 
-(defun make-sieve (n)
-  (let ((sieve (make-array (1+ n) :element-type 'bit :initial-element 1)))
-    (setf (bit sieve 1) 0)
-    sieve))
-
-(defun new-value (p sieve)
-  (loop do (incf p)
-        until (eql (bit sieve p) 1)
-        finally (return p)))
-
-(defun delete-multiples (n p sieve)
-  (loop with j = (* p p)
-        while (<= j n)
-        do (setf (bit sieve j) 0)
-        (incf j p)))
-
-(defun sieve (sieve n)
-  (loop with p = 2
-        while (<= (* p p) n)
-        do (delete-multiples n p sieve)
-           (setf p (new-value p sieve))
-        finally (return sieve)))
-
 (defun next-rotation (n d)
   (if (/= d (ceiling (log n 10)))
       (* n 10)
@@ -59,7 +36,7 @@
         when (= 1 (bit primes i)) return i))
 
 (defun euler-035 ()
-  (loop with primes = (sieve (make-sieve limit) limit)
+  (loop with primes = (p:make-sieve limit)
         with count = 4
         with r = (make-array 6
 			     :element-type 'fixnum

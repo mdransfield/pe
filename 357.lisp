@@ -6,12 +6,7 @@
 ;; Find the sum of all positive integers n not exceeding 100,000,000
 ;; such that for every divisor d of n, d+n/d is prime.
 
-(in-package :cl-user)
-(defpackage pe.357
-  (:use :cl)
-  (:import-from :primes :make-sieve :sieve-prime-p)
-  (:export :euler-357))
-(in-package :pe.357)
+(in-package #:pe)
 
 (defparameter limit (expt 10 8))
 (defparameter primes nil)
