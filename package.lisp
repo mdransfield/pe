@@ -10,7 +10,7 @@
 	   #:euler-051 #:euler-052 #:euler-053 #:euler-054 #:euler-055 #:euler-056 #:euler-057             #:euler-059 #:euler-060
 	   #:euler-061 #:euler-062                         #:euler-065 #:euler-066
 	                                                   #:euler-075 #:euler-076
-                                               #:euler-094 #:euler-095 #:euler-096             #:euler-098
+                                               #:euler-094 #:euler-095 #:euler-096 #:euler-097 #:euler-098
                                                #:euler-104
 		       #:euler-112 #:euler-113                                                                         #:euler-120
                                                            #:euler-125
