@@ -47,7 +47,7 @@
   "The area of an isosceles triangle with sides A, A, & B."
   (cr:*r (cr:/r b 4) (cr:sqrt-r (cr:-r (cr:*r 4 (cr:expt-r a 2)) (cr:expt-r b 2)))))
 
-(defun euler-081 ()
+(defun euler-094 ()
   (loop for c in (mapcar (lambda (x) (numerator x)) (pell-convergents 3 40))
 	for k+ = (* 2/3 (+ c 2))
 	for k- = (* 2/3 (- c 2))
