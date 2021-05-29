@@ -54,3 +54,33 @@ That is, DIGITS contains all the digits 1 to 9, but not necessarily in order."
   (and (eql 9 (length digits))
        (equal (sort (copy-seq digits) #'<) '(1 2 3 4 5 6 7 8 9))))
 
+(defun modular-pow (base exponent modulus)
+  "Calculate (mod (expt BASE EXPONENT) MODULUS) efficiently.
+
+Algorithm for modular exponentation, from Schneier B., 1996, Applied
+Cryptography: Protocols, Algorithms and Source Code in C.
+
+function modular_pow(base, exponent, modulus) is
+    if modulus = 1 then
+        return 0
+    Assert :: (modulus - 1) * (modulus - 1) does not overflow base
+    result := 1
+    base := base mod modulus
+    while exponent > 0 do
+        if (exponent mod 2 == 1) then
+            result := (result * base) mod modulus
+        exponent := exponent >> 1
+        base := (base * base) mod modulus
+    return result
+"
+  (if (= 1 modulus)
+      0
+      (loop with result = 1
+	    with base = (mod base modulus)
+	    while (> exponent 0)
+	    if (= (mod exponent 2) 1)
+	      do (setf result (mod (* result base) modulus))
+	    do (setf exponent (ash exponent -1)
+		     base (mod (* base base) modulus))
+	       finally (return result))))
+
