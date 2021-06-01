@@ -16,23 +16,21 @@
 
 (in-package #:pe)
 
-(defvar *partition-cache* (make-hash-table))
-
-(defun partition-count (n)
-  (cond
-    ((< n 0) 0)
-    ((= 0 n) 1)
-    (t
-     (multiple-value-bind (val win) (gethash n *partition-cache*)
-       (if win
-	   val
-	   (setf (gethash n *partition-cache*) (calculate-partition-count n)))))))
-
-(defun calculate-partition-count (n)
-  (loop for k from 1 upto n
-	sum (* (expt -1 (1+ k)) (+ (partition-count (- n (* 1/2 k (1- (* 3 k))))) (partition-count (- n (* 1/2 k (1+ (* 3 k)))))))))
-
 (defun euler-078 ()
-  (loop for i from 0
-	when (zerop (mod (partition-count i) 1000000))
-	  return i))
+  (loop with p = (make-array 100000 :initial-element 0)
+	with d = 1000000
+	for n from 0
+	do (setf (aref p 0) 1
+		 (aref p 1) 1)
+	   (loop for k from 1
+		 for x = (- n (* 1/2 k (1- (* 3 k))))
+		 for y = (- n (* 1/2 k (1+ (* 3 k))))
+		 for s = 1 then (* -1 s)
+		 when (>= x 0)
+		   do (incf (aref p n) (* s (aref p x)))
+		 when (>= y 0)
+		   do (incf (aref p n) (* s (aref p y)))
+		 until (and (< x 0) (< y 0)))
+	   (setf (aref p n) (mod (aref p n) d))
+	until (zerop (mod (aref p n) d))
+	finally (return n)))
