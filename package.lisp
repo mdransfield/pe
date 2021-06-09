@@ -16,6 +16,7 @@
 		       #:euler-112 #:euler-113                                                             #:euler-119 #:euler-120
                                    #:euler-123             #:euler-125
 				               #:euler-134
+					                                                       #:euler-188
 					                                                                   #:euler-179
 	   #:euler-206
 	   #:euler-216
