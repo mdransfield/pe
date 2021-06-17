@@ -20,12 +20,14 @@ Skip the actual calculation if it's present in the accompanying hash-table."
 
 (defun digits-of (n)
   "Return an ordered list of the digits of N."
-  (loop with temp = nil
-        while (> n 0)
-        do (multiple-value-bind (q r) (floor n 10)
-	     (push r temp)
-	     (setf n q))
-        finally (return temp)))
+  (if (zerop n)
+      (list 0)
+      (loop with temp = nil
+	    while (> n 0)
+	    do (multiple-value-bind (q r) (floor n 10)
+		 (push r temp)
+		 (setf n q))
+	    finally (return temp))))
 
 (defun permutations-of (s)
   "Generate all the permutations of S."
