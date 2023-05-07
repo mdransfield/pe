@@ -32,15 +32,6 @@
 
 (in-package #:pe)
 
-(defun reversed (n)
-  (loop with r = 0
-        while (> n 0) do (setf r (+ (* 10 r) (mod n 10))
-			       n (floor (/ n 10)))
-        finally (return r)))
-
-(defun palindromep (n)
-  (eql n (reversed n)))
-
 (defun lychrel-step (n)
   (+ n (reversed n)))
 

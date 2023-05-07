@@ -29,6 +29,13 @@ Skip the actual calculation if it's present in the accompanying hash-table."
 		 (setf n q))
 	    finally (return temp))))
 
+(defun from-digits (d)
+  "Return a number composed of the digits in D."
+  (loop with n = 0
+	for i in d
+	do (setf n (+ (* n 10) i))
+	finally (return n)))
+
 (defun permutations-of (s)
   "Generate all the permutations of S."
   (loop for i from 0 below (factorial (length s))
@@ -86,3 +93,13 @@ function modular_pow(base, exponent, modulus) is
 		     base (mod (* base base) modulus))
 	       finally (return result))))
 
+(defun reversed (n)
+  "Return the reverse of N.
+That is the number having digits of N in reverse order"
+  (assert (integerp n))
+  (parse-integer (reverse (princ-to-string n))))
+
+(defun palindromep (n)
+  "Predicate true when N is a palindrome.
+That is, when its digits are the same read from either end."
+  (eql n (reversed n)))
